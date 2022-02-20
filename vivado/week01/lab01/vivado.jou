@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sun Feb 20 17:06:27 2022
+# Process ID: 2740
+# Current directory: D:/Workspace/digisys-2022s-priv/vivado/week01/lab01
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8672 D:\Workspace\digisys-2022s-priv\vivado\week01\lab01\lab01.xpr
+# Log file: D:/Workspace/digisys-2022s-priv/vivado/week01/lab01/vivado.log
+# Journal file: D:/Workspace/digisys-2022s-priv/vivado/week01/lab01\vivado.jou
+# Running On: Young, OS: Windows, CPU Frequency: 3000 MHz, CPU Physical cores: 6, Host memory: 17094 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Workspace/digisys-2022s-priv/vivado/week01/lab01/lab01.xpr
+update_compile_order -fileset sources_1
