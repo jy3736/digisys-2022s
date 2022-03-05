@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week04/lab01/lab01.srcs/sources_1/new/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week04/lab01/lab01.srcs/sim_1/new/mux2_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week04/lab01/lab01.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
