@@ -1,10 +1,10 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_df.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_df.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hw03_df
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hw03_gl
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl_syn.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl_syn.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hw03_gl_syn
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sim_1/new/hw03_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sim_1/new/hw03_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hw03_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

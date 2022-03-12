@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sat Mar 12 09:15:29 2022
+# Process ID: 9644
+# Current directory: C:/Workspace/digisys-2022s/vivado/week05/hw01/hw01.runs/synth_1
+# Command line: vivado.exe -log fadd1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fadd1.tcl
+# Log file: C:/Workspace/digisys-2022s/vivado/week05/hw01/hw01.runs/synth_1/fadd1.vds
+# Journal file: C:/Workspace/digisys-2022s/vivado/week05/hw01/hw01.runs/synth_1\vivado.jou
+# Running On: Young-2021NB, OS: Windows, CPU Frequency: 3302 MHz, CPU Physical cores: 4, Host memory: 16843 MB
+#-----------------------------------------------------------
+source fadd1.tcl -notrace
