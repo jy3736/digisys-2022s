@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
+D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sim_1/new/hw03_tb.v,1646921460,verilog,,,,hw03_tb,,,,,,,,
+D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sim_1/new/hw03_timing.v,1646922075,verilog,,,,hw03_timing,,,,,,,,
+D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_df.v,1646919792,verilog,,D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl.v,,hw03_df,,,,,,,,
+D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl.v,1646919699,verilog,,D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl_syn.v,,hw03_gl,,,,,,,,
+D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sources_1/new/hw03_gl_syn.v,1646919828,verilog,,D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sim_1/new/hw03_tb.v,,hw03_gl_syn,,,,,,,,
