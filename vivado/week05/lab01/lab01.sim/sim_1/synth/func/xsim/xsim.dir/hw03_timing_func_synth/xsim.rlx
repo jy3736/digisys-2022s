@@ -1,0 +1,12 @@
+
+{ 
+    crc :  980454584275369124  , 
+    ccp_crc :  0  , 
+    cmdline : " --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot hw03_timing_func_synth xil_defaultlib.hw03_timing xil_defaultlib.glbl" , 
+    buildDate : "Dec 19 2021" , 
+    buildTime : "11:27:32" , 
+    linkCmd : "C:\\Xilinx\\Vivado\\2021.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/hw03_timing_func_synth/xsimk.exe\"   \"xsim.dir/hw03_timing_func_synth/obj/xsim_0.win64.obj\" \"xsim.dir/hw03_timing_func_synth/obj/xsim_1.win64.obj\" -L\"C:\\Xilinx\\Vivado\\2021.2\\lib\\win64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

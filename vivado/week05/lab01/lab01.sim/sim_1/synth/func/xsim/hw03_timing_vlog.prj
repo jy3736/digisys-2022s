@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"hw03_timing_func_synth.v" \
+"../../../../../lab01.srcs/sim_1/new/hw03_timing.v" \
+
+# Do not sort compile order
+nosort

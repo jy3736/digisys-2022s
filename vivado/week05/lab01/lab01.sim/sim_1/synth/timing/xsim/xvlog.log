@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.sim/sim_1/synth/timing/xsim/hw03_timing_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hw03_df
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s/vivado/week05/lab01/lab01.srcs/sim_1/new/hw03_timing.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hw03_timing

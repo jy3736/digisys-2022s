@@ -1,0 +1,7 @@
+Running: xsim.dir/hw03_timing_time_synth/xsimk.exe -simmode gui -wdb hw03_timing_time_synth.wdb -simrunnum 0 -socket 57312
+Design successfully loaded
+Design Loading Memory Usage: 7176 KB (Peak: 7176 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7756 KB (Peak: 7756 KB)
+Simulation CPU Usage: 46 ms
