@@ -1,6 +1,6 @@
 body {
 	color:antiquewhite;
-	background-color: black;
+	background-color: rgb(15, 15, 15);
 }
 
 .block-color-gray_background {
@@ -30,16 +30,16 @@ body {
 .block-color-red_background {
 	background: rgb(196, 28, 36);
 }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-pink { background-color: rgb(158, 20, 80); }
+.select-value-color-purple { background-color: rgb(105, 20, 155); }
 .select-value-color-green { background-color: rgba(12, 73, 12, 0.952); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-gray { background-color: rgb(54, 54, 52); }
 .select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-orange { background-color: rgb(209, 100, 16); }
+.select-value-color-brown { background-color: rgb(128, 72, 49); }
 .select-value-color-red { background-color: rgb(189, 59, 36); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-yellow { background-color: rgb(197, 152, 54); }
+.select-value-color-blue { background-color: rgb(14, 62, 88); }
 
 .bookmark-description {
 	color: rgba(241, 232, 203, 0.6);
