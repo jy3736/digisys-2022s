@@ -48,3 +48,22 @@ body {
 	max-height: 4.5em;
 	word-break: break-word;
 }
+
+.yang-class-001 {
+	color :antiquewhite;
+	font-size:x-large;
+	line-height: 100%;
+}
+
+.yang-class-002 {
+	color :antiquewhite;
+	font-size: large;
+	line-height: 200%;
+}
+
+.yang-class-003 {
+	color :antiquewhite;
+	background-color: brown;
+	font-size: large;
+	line-height: 200%;
+}

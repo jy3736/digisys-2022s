@@ -2,11 +2,7 @@
 
 import sys, os
 
-add_to_head="""
-<link rel="stylesheet" href="dark-theme.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-"""
+add_to_head='<link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>'
 
 add_to_body="""
 <script>hljs.highlightAll();</script>
@@ -30,4 +26,4 @@ if __name__=="__main__":
     if len(sys.argv)==2:
         main(sys.argv[1])
     else:
-        print("\nUsage : dark-mode.py <html-file-name>\n")
+        print("\nUsage : add_catalog.py <html-file-name>\n")
