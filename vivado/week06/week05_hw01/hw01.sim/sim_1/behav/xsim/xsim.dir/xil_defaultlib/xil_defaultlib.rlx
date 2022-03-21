@@ -1,0 +1,9 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.sim/sim_1/behav/xsim/glbl.v,1647411110,verilog,,,,glbl,,,,,,,,
+D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.srcs/sim_1/new/fadd1_tb.v,1647418654,verilog,,,,fadd1_tb,,,,,,,,
+D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.srcs/sim_1/new/hadd1_tb.v,1647411681,verilog,,,,hadd1_tb,,,,,,,,
+D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.srcs/sources_1/new/fadd1.v,1647412948,verilog,,D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.srcs/sources_1/new/hadd1.v,,fadd1,,,,,,,,
+D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.srcs/sources_1/new/hadd1.v,1647411248,verilog,,D:/Workspace/digisys-2022s-priv/vivado/week05/hw01/hw01.srcs/sim_1/new/fadd1_tb.v,,hadd1,,,,,,,,
