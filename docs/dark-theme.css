@@ -66,4 +66,20 @@ body {
 	background-color: brown;
 	font-size: large;
 	line-height: 200%;
+	padding: 5px;
+	border-radius: 10px;;
+}
+
+#soundon {
+	width:85%;
+	margin: auto;
+	margin-top: 10px;
+	display: block;
+	border-radius: 10px;
+	font-size:large;
+}
+
+h3, h2, h1 {
+	padding: 5px;
+	border-radius: 10px;;
 }

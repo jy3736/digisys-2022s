@@ -23,7 +23,7 @@ def main(name):
         text+=line
     fh.close()
     ofn = name.replace(".html","-audio.html")
-    re_a = re.compile(r"<div class=\"source\">.*\.m4a.*</a></div>")
+    re_a = re.compile(r"<div class=\"source\"><a href=\"[^<]*\.m4a\">[^<]*\.m4a<\/a><\/div>")
     re_s = re.compile(r"href=\"(.*)\"")
     match = re_a.findall(text)
     for m in match:
