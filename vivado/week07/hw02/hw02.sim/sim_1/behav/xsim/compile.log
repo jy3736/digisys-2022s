@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s-priv/vivado/week06/lab02/lab02.srcs/sim_1/new/alu4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu4
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/digisys-2022s-priv/vivado/week06/lab02/lab02.srcs/sim_1/new/alu4_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu4_tb
