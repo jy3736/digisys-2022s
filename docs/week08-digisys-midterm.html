@@ -1,0 +1,739 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>期中考複習 (數位系統設計實務)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script></head><body><article id="a440471e-fb81-4fe7-9420-f2ebdee0e416" class="page sans"><header><img class="page-cover-image" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/1.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/yang-tr-wb.png"/></div><h1 class="page-title">期中考複習 (數位系統設計實務)</h1><link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script></header><div class="page-body"><h2 id="87446cd3-e4e8-4273-a17c-4c87b463e58b" class="block-color-purple_background">試題屬性說明及暫定的給分標準，以實際考試狀況再行調整</h2><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=83ad1116-27f6-4571-8510-115cf22df060" id="soundon"></iframe></div></figure><ul id="0bbc6538-0745-4644-86da-5a9718951268" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">1 ~ 3</mark> 每題<mark class="highlight-red">『25分』，</mark>是<mark class="highlight-red">『在家考試(Take-home Exam)』</mark>題目，<mark class="highlight-red">題目不會變動</mark>期中考當天檢查繳交。</li></ul><ul id="df3fef21-2d30-458e-b4f5-0d54c24c35d3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">4 、5</mark> 每題<mark class="highlight-red">『40分』，</mark>是現場<mark class="highlight-red">『開卷考試(Open-book Exam)』</mark>考題，會運用到第7週作業的解題技巧，試題詳細內容期中考當天公布。</li></ul><ul id="f922c921-b1bb-4b4a-950f-a636cdc539b3" class="bulleted-list"><li style="list-style-type:disc">共計<mark class="highlight-red">『155分』</mark>，超過『100分』的部分計入平時成績。</li></ul><h2 id="80683f1d-a79d-4454-ace7-19888bce9a90" class="block-color-purple_background">期中考題設計</h2><div id="6166392e-1ec3-49e1-b791-7f728050c772" class="column-list"><div id="c2c91042-cd0f-4ea1-910d-f4007b154852" style="width:12.5%" class="column"><figure id="57202c6e-8e99-4585-8ddf-ac259ba95dba" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/Untitled.png"><img style="width:144px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/Untitled.png"/></a></figure></div><div id="0cf84736-0527-41d4-a2ee-18af3e88ca94" style="width:87.50000000000003%" class="column"><div id="yang-id-001" class="yang-class-001">目 錄 (課堂練習/作業)：</div>
+<a href="#d2579e41-03c7-433e-b73b-ed474d695866" class="yang-class-002">[實作問題 1]：邏輯閘層級(Gate Level) Verilog 電路實作。</a>
+<a href="#cf8c39b9-ae32-4152-8194-47f84d1ec981" class="yang-class-002">[實作問題 2]：使用半加器 (half adder) 設計全加器 (full adder) + 測試程式。</a>
+<a href="#90270559-4feb-4900-afef-d26207880adc" class="yang-class-002">[實作問題 3]：3-bit 連波進位加法器 (Ripple Carry Adder) 電路實作。</a>
+<a href="#3e274da2-64eb-4eb3-93c4-2fccdf1593bb" class="yang-class-002">[實作問題 4、5]：參考 第7周 課堂作業 2、3。</a>
+</div></div><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="d2579e41-03c7-433e-b73b-ed474d695866" class="block-color-teal_background">[實作問題 1]：邏輯閘層級(Gate Level) Verilog 電路實作。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=4636331d-22be-4cb9-bc0b-15ec1e7171d0" id="soundon"></iframe></div></figure><ul id="7d31e136-cf94-4a29-af81-ec61446a97d9" class="block-color-red to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考作業：第4周 課堂作業 1</span></li></ul><ul id="6eed33f8-96c1-4ed9-a641-32abcb639213" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-yellow">邏輯閘層級(Gate Level)</mark> Verilog 電路實作。(module : prob01)</span></li></ul><figure id="0af44863-8a68-4398-9d31-dbe01d7f2372" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/prob01-RTL-_Schematic.png"><img style="width:576px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/prob01-RTL-_Schematic.png"/></a></figure><p id="533aa7db-d9fe-48a0-9c68-ca23f28771a3" class="">
+</p><ul id="2d42d083-df13-4f2c-b2a3-c4730fc5476b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 (module : prob01_tb)</span></li></ul><pre id="8c9e5fd1-f63e-478e-963b-b503a0c804ca" class="code code-wrap"><code>`timescale 1ns / 1ps
+
+module prob01_tb;
+
+    reg a,b,c,d;
+    wire f;
+    wire x1,x2,x3,fx;
+    reg err;
+
+    assign x1 = a | b;
+    assign x2 = ~a &amp; c;
+    assign x3 = x1 | ~x2;
+    assign fx = ~d | x3;
+
+    prob01 uut1(.a(a),.b(b),.c(c),.d(d),.f(f));
+    
+    integer i;
+    initial begin
+        {a,b,c,d,err} = 0;
+        #100;
+        for(i=0; i&lt;16; i=i+1) begin
+            err = 1&#x27;b0;
+            {a,b,c,d} = i;
+            #50;
+            err = (f!=fx);
+            #50;
+        end
+        #100;
+        $finish;
+    end
+
+endmodule</code></pre><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="cf8c39b9-ae32-4152-8194-47f84d1ec981" class="block-color-teal_background">[實作問題 2]：使用半加器 (half adder) 設計全加器 (full adder) + 測試程式。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=0211e6a4-cc24-4c63-b63e-d108c3fc57f2" id="soundon"></iframe></div></figure><ul id="13a4b8aa-62b3-4736-a3cb-b98f6cf13b58" class="block-color-red to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考作業：第5周 課堂作業 1</span></li></ul><ul id="2ac04037-b500-41ad-a98e-1aca8a94b271" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">使用 Data Flow 1-bit 半加器 (module : hadd1)，實現 <mark class="highlight-yellow">1-bit  Structural Level  全加器</mark>。 (module : fadd1)</span></li></ul><pre id="458f2d91-0939-4913-99ff-a45a95302a18" class="code code-wrap"><code>`timescale 1ns / 1ps
+
+module hadd1(
+    input a,
+    input b,
+    output s,
+    output co
+);
+
+    assign {co,s} = a + b;
+    
+endmodule</code></pre><p id="d7dca44e-9221-4d82-b6db-598a86409a45" class="">
+</p><ul id="fc07dc06-0fb3-40cc-8a26-a936c153c556" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-yellow">參考『實作問題 1』功能模擬測試 (Testbench)</mark>，設計對應的全加器測試程式。(module : fadd1_tb)</span></li></ul><figure id="19368c22-e40e-428d-95af-0a5310ef29f1" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/prob02-RTL-Schematic.png"><img style="width:1832px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/prob02-RTL-Schematic.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="90270559-4feb-4900-afef-d26207880adc" class="block-color-teal_background">[實作問題 3]：3-bit 連波進位加法器 (Ripple Carry Adder) 電路實作。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=dd752432-eccb-49df-b679-2a898d66f7d8" id="soundon"></iframe></div></figure><ul id="cfddecce-7471-430e-a642-900b3e5995e9" class="block-color-red to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考作業：第6周 課堂作業 1</span></li></ul><ul id="6168d474-5ec0-4c61-9a4f-1574c168ba15" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">將原圖4-bit電路改成3-bit，用作考試參考用。</span></li></ul><figure id="5b83f868-e41b-496f-b832-1a4af9c3260b" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/Untitled%201.png"><img style="width:480px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/Untitled%201.png"/></a></figure><ul id="af8b1c82-5c92-4475-8e5d-7d813e9a46a2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">使用 Data Flow  1-bit 全加器 (module : fadd1)，以 <mark class="highlight-yellow">Structural Level Verilog 的方式實現「3-bit 連波進位加法器 」</mark>。(module : rcadd3)</span></li></ul><pre id="b523f9f4-42c6-4c5f-a73c-7a7527e41cfb" class="code code-wrap"><code>`timescale 1ns / 1ps
+
+module fadd1(
+    input a,
+    input b,
+    input ci,
+    output s,
+    output co
+    );
+    
+    assign {co,s} = a + b + ci;
+    
+endmodule</code></pre><ul id="079f217e-c05c-4fd5-80ac-154bffebfc36" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-yellow">參考『實作問題 1』功能模擬測試 (Testbench)</mark>，設計對應的3-bit加法器測試程式。(module : rcadd3_tb)</span></li></ul><h3 id="c1a04848-733e-443e-bb98-674582107919" class="block-color-yellow">3-bit 連波進位加法器 RTL分析電路 (Schematic)</h3><figure id="ff57c0f9-629a-4f7c-b9a0-323d704c14d3" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/prob03-RTL-Schmatic.png"><img style="width:1832px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/prob03-RTL-Schmatic.png"/></a></figure><h3 id="8a95d391-2e21-4d3a-89f1-e14530eb1cc7" class="block-color-yellow">『最低限度』的完整模擬測試結果，想想『7-bit』會有幾種變化？</h3><figure id="cb46f19e-8172-4a04-b253-942c6af11c0b" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/comprehensive-sim-result.png"><img style="width:3839px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/comprehensive-sim-result.png"/></a></figure><p id="05c45200-8750-4ede-a857-22f6247d6e31" class="">
+</p><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="3e274da2-64eb-4eb3-93c4-2fccdf1593bb" class="block-color-teal_background">[實作問題 4、5]：參考 第7周 課堂作業 2、3。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=d5ad88f5-f30f-4c73-a393-0bd4f97bf3fc" id="soundon"></iframe></div></figure><figure class="block-color-yellow callout" style="white-space:pre-wrap;display:flex" id="2022c6f7-b540-44df-b2a3-ae7e1938066d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">這些題目並不複雜，主要是讓各位自我檢視，平時課堂練習及作業學到的基本技能。</div></figure><p id="6f069a9d-01bd-44b2-95b0-f2bd6adc2c37" class="block-color-red">
+</p><p id="b02eb0a6-7e08-43de-9e61-0d0a17e0267d" class="">
+</p><figure id="75bb65bb-bc97-41c5-beb8-0ce15581488a" class="image"><a href="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/%E5%9C%96%E7%89%873.png"><img style="width:1322px" src="%E6%9C%9F%E4%B8%AD%E8%80%83%E8%A4%87%E7%BF%92%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%2057202/%E5%9C%96%E7%89%873.png"/></a></figure></div></article>
+<script>hljs.highlightAll();</script>
+</body></html>
