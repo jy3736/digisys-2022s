@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:D:/Workspace/stust-private/digisys-2022s/vivado/week11/lab02/lab02.srcs/constrs_1/new/clkdiv.xdc rfile:../../../lab02.srcs/constrs_1/new/clkdiv.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN F22 [get_ports en]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y9 [get_ports iclk]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U14 [get_ports oclk]

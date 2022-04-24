@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/stust-private/digisys-2022s/vivado/week11/lab01/lab01.srcs/sources_1/imports/lab01/clkdiv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkdiv
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Workspace/stust-private/digisys-2022s/vivado/week11/lab01/lab01.srcs/sim_1/new/clkdiv_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkdiv_tb
