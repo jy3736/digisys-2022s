@@ -1,0 +1,716 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>期末測驗 (數位系統設計實務) - 『在家考試(Take-home Exam)』題目 + 『開卷考試(Open-book Exam)』提示</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script></head><body><article id="0d53b27e-344f-40a7-b459-4918ae7c1859" class="page sans"><header><img class="page-cover-image" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/1.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/yang-tr-wb.png"/></div><h1 class="page-title">期末測驗 (數位系統設計實務) - 『在家考試(Take-home Exam)』題目 + 『開卷考試(Open-book Exam)』提示</h1><link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script></header><div class="page-body"><h2 id="aa1aba20-2b72-4073-ab95-3636feb3a8d2" class="block-color-purple_background">試題屬性說明及暫定的給分標準，以實際考試狀況再行調整</h2><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=3e8935c1-3c78-48bb-acb2-64a485755a7e" id="soundon"></iframe></div></figure><ul id="54d129ad-5643-4967-b32d-1fe314d60d30" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">1 ~ 3</mark> 每題<mark class="highlight-red">『25分』，</mark>是<mark class="highlight-red">『在家考試(Take-home Exam)』</mark>題目，題目不會變動期中考當天檢查繳交。<ul id="ba4273cb-755f-4db8-8eb2-d70190e14512" class="bulleted-list"><li style="list-style-type:circle">如果無法按題目要求，<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</li></ul></li></ul><ul id="cd1b820b-e52e-48b1-bb99-66d75d491989" class="bulleted-list"><li style="list-style-type:disc">4 ~ 8 每題<mark class="highlight-red">『20分』，</mark>是現場<mark class="highlight-red">『開卷考試(Open-book Exam)』</mark>考題，試題詳細內容期中考當天公布。</li></ul><ul id="c87bf037-f383-4b20-96f7-471a5a727c21" class="bulleted-list"><li style="list-style-type:disc">共計<mark class="highlight-red">『160分』</mark>，超過『100分』的部分計入平時成績。</li></ul><h2 id="5ed926ab-720d-44a9-aac0-7e1a79be4a2a" class="block-color-purple_background">期末測驗考題設計</h2><div id="5cfffa4a-23e4-4c56-a98e-3608f26183e7" class="column-list"><div id="72951dbc-f666-4020-b8b9-4f990f9a2dc5" style="width:12.5%" class="column"><figure id="1e779a1f-cac7-423d-b348-6e688a3d2c02" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled.png"><img style="width:144px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled.png"/></a></figure></div><div id="d21ef79f-b743-4cb7-ae27-be1e96eaf376" style="width:87.50000000000003%" class="column"><div id="yang-id-001" class="yang-class-001">目 錄：</div>
+<a href="#697b137e-8525-4238-9959-b9aaa5adb94a" class="yang-class-002">[實作問題 1]：Verilog 實作組合邏輯電路 - 簡易的訊號路由模組。</a>
+<a href="#190a9d03-face-4d07-9b06-ea807ea6b86d" class="yang-class-002">[實作問題 2]：2-bit 漣波進位加法器 (Ripple Carry Adder) 電路實作。</a>
+<a href="#fc001e75-dfe7-4a06-8aaf-44e5e0f03cf1" class="yang-class-002">[實作問題 3]： 3位元比較器(Comparator)電路電路實作。</a>
+<a href="#ba7be067-a47e-4723-a4cf-bfcfc18ab20d" class="yang-class-002">[實作問題 4 ~ 8]： 『開卷考試(Open-book Exam)』考題，考試當天公布。</a>
+</div></div><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="697b137e-8525-4238-9959-b9aaa5adb94a" class="block-color-teal_background">[實作問題 1]：Verilog 實作組合邏輯電路 - 簡易的訊號路由模組。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=d5ea09ee-af37-46d8-ae6f-32baa86580e9" id="soundon"></iframe></div></figure><ul id="9884efff-0930-4f5f-ab8a-780ce3d5f4e7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">使用資料路徑(Dataflow) Verilog 設計 1-bit MUX 模組。(module : mux2)</span></li></ul><ul id="02b8993d-fc79-42e5-a9f9-9edc2fded23a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考附圖，以結構式(Structural) Verilog 實作訊號路由模組(Crossbar)。(module : prob01)</span><pre id="123bd2be-80bc-44a5-8b4e-4040237a6afe" class="code code-wrap"><code>module prob01(
+    input a,
+    input b,
+    input s,
+    output x,
+    output y
+    );
+    
+    // 使用 mux2 + 結構式 Verilog 實現 Crossbar 電路設計
+    
+endmodule</code></pre></li></ul><ul id="09f5f808-c8d2-40ce-a9cc-38492c0b28cc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 (module : prob01_tb)</span></li></ul><ul id="772e0e4d-44cb-407a-8ed8-2d5820ff28f4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>實體考試</code> 把你的設計下載到 Zedboard，I/O 腳位設置考試當天公布。</span></li></ul><ul id="8df78ca8-3aa1-433f-89a0-490f58f15346" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">如果無法<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</span></li></ul><h3 id="e95f3d60-b6f2-4f18-bf78-9e1f54a78559" class="block-color-yellow">結構式 Verilog Crossbar 設計 </h3><figure id="68927455-74bc-43e4-ace4-d648c4f03767" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%201.png"><img style="width:672px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%201.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="190a9d03-face-4d07-9b06-ea807ea6b86d" class="block-color-teal_background">[實作問題 2]：2-bit 漣波進位加法器 (Ripple Carry Adder) 電路實作。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=fb6752d7-e66e-4c7a-9f89-9cbd8f99997c" id="soundon"></iframe></div></figure><ul id="cc7beca8-40a8-41a8-848b-fa38c19e0c62" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">使用資料路徑(Dataflow) Verilog 設計 1-bit 全加器。 (module : fadd)</span></li></ul><ul id="8593f258-5698-41f2-8372-b4fe54bfb0ac" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考附圖，以結構式(Structural) Verilog 實現「2-bit 連波進位加法器」。(module : prob02)</span></li></ul><pre id="b2e540eb-ff25-4ca8-9a31-7df11b395061" class="code code-wrap"><code>module prob02(
+    input [1:0] a,
+    input [1:0] b,
+    input cin,
+    output cout,
+    output [1:0] sum
+    );
+    
+    // 使用 fadd + 結構式 Verilog 實現「2-bit 連波進位加法器」電路設計
+    
+endmodule</code></pre><ul id="d4c73f7e-1867-4fac-af68-c5b5aae0b6ce" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 (module : prob02_tb)</span></li></ul><ul id="bb9cb040-09c8-45c7-9f89-2c1530554916" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>實體考試</code> 把你的設計下載到 Zedboard，I/O 腳位設置考試當天公布。</span></li></ul><ul id="0bc8a169-8419-4ac2-8bb7-bc0f17a497f2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">如果無法<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</span></li></ul><h3 id="df99d747-2292-452f-a2ed-32cdc5d7e632" class="block-color-yellow">結構式 Verilog 「2-bit 連波進位加法器」設計 </h3><figure id="bd6671f0-e528-41d9-b0e2-3aeb331e1bd1" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%202.png"><img style="width:2641px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%202.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="fc001e75-dfe7-4a06-8aaf-44e5e0f03cf1" class="block-color-teal_background">[實作問題 3]： 3位元比較器(Comparator)電路電路實作。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=9efade6a-1333-4bc7-a894-db7c04fce5df" id="soundon"></iframe></div></figure><ul id="cb80f47c-a7e5-438d-b2f0-bbb1d8237910" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">以 Data Flow Verilog 設計 1-bit 比較器。 (module : cmp)</span></li></ul><ul id="914b37bf-affd-404d-8b2f-097c369fe14d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考附圖，以結構式 Verilog 實現「3-bit 比較器 」。(module : prob03)</span></li></ul><pre id="569a976a-c3e7-4e16-9c5d-56f87a223725" class="code code-wrap"><code>module prob03(
+    input [2:0] a,
+    input [2:0] b,
+    output lt,
+    output eq,
+    output gt
+);
+
+    // 使用 cmp + 結構式 Verilog 實現「3-bit 比較器 」電路設計
+
+endmodule</code></pre><ul id="e935d82c-8139-40bf-a23f-fe6c72a9a36c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 (module : prob03_tb)</span></li></ul><ul id="2344cb19-7b68-4216-a910-344fd76b54cf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>實體考試</code> 把你的設計下載到 Zedboard，I/O 腳位設置考試當天公布。</span></li></ul><ul id="df6923a0-0efa-4174-8521-e55af292f5f9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">如果無法<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</span></li></ul><h3 id="89957c61-a93a-407c-8439-380d338968f7" class="block-color-yellow">結構式 Verilog 「3-bit 比較器」設計 </h3><figure id="b45f6417-b5d7-45ee-994a-3b93e664509d" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%203.png"><img style="width:2653px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%203.png"/></a></figure><p id="45d48a3c-020e-4059-9d46-7fa933043279" class="">
+</p><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="ba7be067-a47e-4723-a4cf-bfcfc18ab20d" class="block-color-purple_background">[實作問題 4 ~ 8]： 『開卷考試(Open-book Exam)』考題，考試當天公布。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=bc8da151-f1c5-46fc-9e3b-c2ab76f41c67" id="soundon"></iframe></div></figure><ul id="5053f10b-b979-4285-9b8f-2ac32b8f7abd" class="block-color-yellow to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">實作問題 4 ：傳統編碼/解碼器(Encoder/Decoder)實現。</span></li></ul><div id="a86c3eb7-d71d-40bd-9604-d2c641d1bfa6" class="column-list"><div id="24084c8c-2791-405c-ac80-0a3c1b68b936" style="width:50%" class="column"><figure id="1325f742-6f81-4644-92a5-319290690b2d" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%204.png"><img style="width:432px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%204.png"/></a></figure></div><div id="e7bd9a29-c992-4c0e-8640-26727d3cee9c" style="width:50%" class="column"><figure id="e119a927-d80e-4fe3-a2ae-e14aaa65b3b3" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%205.png"><img style="width:2216px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%205.png"/></a></figure></div></div><p id="0d5aa871-b398-4caa-902b-4d8e4bf717ed" class="">
+</p><ul id="9901adb2-af73-4ace-93c7-a479acc508fe" class="block-color-yellow to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">實作問題 5 ：特殊編碼器實現，狀態機的輸出(Output)/下一個狀態(Next State)組合邏輯。</span></li></ul><figure id="a75af76f-3002-4cfd-bc49-94271f1d4ff4" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%206.png"><img style="width:1526px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/Untitled%206.png"/></a></figure><p id="a63a3a5d-99c6-49a5-8168-defc82fcee9b" class="">
+</p><ul id="c0266279-ffbd-43c6-9359-98b255434729" class="block-color-yellow to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">實作問題 6 ：D型正反器設計(n-位元、同步/非同步重置、時脈(clock)取樣邊緣)。</span><ul id="e7484d2d-a370-441f-99ec-4391fac7a596" class="block-color-gray to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">第十三週、第十四週做的線上練習</span></li></ul></li></ul><p id="09966773-0d40-4e65-9d36-7517967cc752" class="">
+</p><ul id="1c27ce08-6ce6-4315-a5dc-eb7a653ed862" class="block-color-yellow to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">實作問題 7 ：計數器設計(n-位元、同步/非同步重置、時脈(clock)取樣邊緣、重置載入)。</span><ul id="224c470b-2396-4cb5-8518-cb8b7fdd988d" class="block-color-gray to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">第十五週的上課內容</span></li></ul></li></ul><p id="62fe6a40-1c30-4b34-9259-ce167aa9d6d8" class="">
+</p><ul id="2c0bba89-4551-402f-97df-02ba0f05267a" class="block-color-yellow to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">實作問題 8 ：『天氣預報狀態機 (FSM)』實現，你可選擇 Moore 或 Mealy 狀態機實現。</span><ul id="598b48d6-ab3f-4825-94a5-b3fbbfbd88f3" class="block-color-gray to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">第十六週的上課內容</span></li></ul></li></ul><p id="1e6d7e32-294e-45f1-8f29-d1447a619ced" class="">
+</p><figure id="0e2c5362-4226-4746-abe6-07cb32aaaacf" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/%E5%9C%96%E7%89%873.png"><img style="width:1322px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%20-%20%E3%80%8E%E5%9C%A8%E5%AE%B6%E8%80%83%E8%A9%A6(Take-home%20Exam)%E3%80%8F%E9%A1%8C%E7%9B%AE%20+%20%E3%80%8E%E9%96%8B%E5%8D%B7%E8%80%83%E8%A9%A6%201e779a1fcac7423db3486e688a3d2c02/%E5%9C%96%E7%89%873.png"/></a></figure></div></article>
+<script>hljs.highlightAll();</script>
+</body></html>
