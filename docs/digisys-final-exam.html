@@ -1,0 +1,781 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>期末測驗 (數位系統設計實務) </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script></head><body><article id="7220b52d-d0da-43a5-af35-d48ae0c7c7d4" class="page sans"><header><img class="page-cover-image" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/1.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/yang-tr-wb.png"/></div><h1 class="page-title">期末測驗 (數位系統設計實務) </h1><link rel="stylesheet" href="dark-theme.css"><link rel="stylesheet"  target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark-dimmed.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script></header><div class="page-body"><h2 id="446c79b0-b17f-4b40-a338-5f7e75502100" class="block-color-purple_background">試題屬性說明及暫定的給分標準，以實際考試狀況再行調整</h2><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=3e8935c1-3c78-48bb-acb2-64a485755a7e" id="soundon"></iframe></div></figure><ul id="42fb1fff-5435-45ef-a781-e3734c23ade3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">1 ~ 3</mark> 每題<mark class="highlight-red">『25分』，</mark>是<mark class="highlight-red">『在家考試(Take-home Exam)』</mark>題目，題目不會變動期中考當天檢查繳交。<ul id="65c061cc-fc66-4010-a3af-4ca412042d80" class="bulleted-list"><li style="list-style-type:circle">如果無法按題目要求，<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</li></ul></li></ul><ul id="15a3db12-3111-406a-a77a-aa54afef7a1e" class="bulleted-list"><li style="list-style-type:disc">4 ~ 8 每題<mark class="highlight-red">『20分』，</mark>是現場<mark class="highlight-red">『開卷考試(Open-book Exam)』</mark>考題，試題詳細內容期中考當天公布。</li></ul><ul id="73339d5d-d96a-4b28-a834-b4f33abd08b9" class="bulleted-list"><li style="list-style-type:disc">共計<mark class="highlight-red">『175分』</mark>，超過『100分』的部分計入平時成績。</li></ul><h2 id="eeba223a-fbc2-4317-9d87-8832efc5fa57" class="block-color-purple_background">期末測驗考題設計</h2><div id="e0e69540-2ba9-406d-b67e-b656f2bb3c19" class="column-list"><div id="16bc1326-f267-4142-919d-0e303d2c4704" style="width:12.5%" class="column"><figure id="03855c61-2eb1-4c99-aa64-cefb67ca7ff8" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled.png"><img style="width:144px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled.png"/></a></figure></div><div id="250a286f-910f-4ed6-b15b-f2b0f6a31d15" style="width:87.50000000000003%" class="column"><div id="yang-id-001" class="yang-class-001">目 錄：</div>
+<a href="#12acd56d-9674-4324-a3fb-0e2510b796af" class="yang-class-002">[實作問題 1]：Verilog 實作組合邏輯電路 - 簡易的訊號路由模組。</a>
+<a href="#bd672174-e69c-4a51-bbce-31eb6886c6ba" class="yang-class-002">[實作問題 2]：2-bit 漣波進位加法器 (Ripple Carry Adder) 電路實作。</a>
+<a href="#31f1b066-f86f-4709-ad4c-7dddf2e7dfe7" class="yang-class-002">[實作問題 3]： 3-bit 比較器 (Comparator) 電路實作。</a>
+<a href="#77203064-d886-454a-8af8-84f723e33adb" class="yang-class-002">[實作問題 4]：傳統編碼/解碼器(Encoder/Decoder)實現。</a>
+<a href="#d09acd5b-e8ce-4581-905c-34642a1f2067" class="yang-class-002">[實作問題 5]：狀態機的輸出(Output)/下一個狀態(Next State)組合邏輯。</a>
+<a href="#a65e285c-e77e-4751-9287-8db9ae94f93c" class="yang-class-002">[實作問題 6]：D型正反器設計(4-位元、非同步0重置、正邊緣時脈取樣)。</a>
+<a href="#974483f4-d2f8-4d49-a17a-bb42946398ee" class="yang-class-002">[實作問題 7]：上/下數計數器設計(4-位元、同步0重置、正邊緣時脈取樣)。</a>
+<a href="#39fbdb36-7213-4e20-a79e-623a89970fc7" class="yang-class-002">[實作問題 8]：『天氣預報 Moore 狀態機 (FSM)』實現。</a>
+</div></div><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="12acd56d-9674-4324-a3fb-0e2510b796af" class="block-color-teal_background">[實作問題 1]：Verilog 實作組合邏輯電路 - 簡易的訊號路由模組。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=d5ea09ee-af37-46d8-ae6f-32baa86580e9" id="soundon"></iframe></div></figure><ul id="f3ba5e13-0909-4bfe-9fec-a9c2deee03a7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">使用資料路徑(Dataflow) Verilog 設計 1-bit MUX 模組。(module : mux2)</span></li></ul><ul id="4ce7ec69-eaf2-45e5-bc82-a11c138d953c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考附圖，以結構式(Structural) Verilog 實作訊號路由模組(Crossbar)。(module : prob01)</span><pre id="f260c7d4-fe33-476a-8b2a-7207cb06f1e2" class="code code-wrap"><code>module prob01(
+    input a,
+    input b,
+    input s,
+    output x,
+    output y
+    );
+    
+    // 使用 mux2 + 結構式 Verilog 實現 Crossbar 電路設計
+    
+endmodule</code></pre></li></ul><ul id="63d446e5-9030-47cd-8b64-9679d5e995cf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。</span><p id="6b8d504f-76c0-452c-9797-309370b950a9" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob01_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob01_tb.v</a></p></li></ul><ul id="04e9acb9-3d7a-4a3b-aa0e-1a32cef91b70" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>實體考試</code> 把你的設計下載到 Zedboard，I/O 腳位設置考試當天公布。</span></li></ul><ul id="35bbb1cd-5a9a-4dd2-a6e9-4fc3b3175d07" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">如果無法<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</span></li></ul><h3 id="1f21d395-484e-4904-88ff-9bbf4ac19d39" class="block-color-yellow">結構式 Verilog Crossbar 設計 </h3><figure id="208cc2ff-73a9-4e11-8b37-e04d6d3c3a38" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%201.png"><img style="width:672px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%201.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="bd672174-e69c-4a51-bbce-31eb6886c6ba" class="block-color-teal_background">[實作問題 2]：2-bit 漣波進位加法器 (Ripple Carry Adder) 電路實作。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=fb6752d7-e66e-4c7a-9f89-9cbd8f99997c" id="soundon"></iframe></div></figure><ul id="663194b9-caa3-4e24-8674-3254814566ef" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">使用資料路徑(Dataflow) Verilog 設計 1-bit 全加器。 (module : fadd)</span></li></ul><ul id="4a0f7e34-bd48-4e2d-b492-7296da1d2ce6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考附圖，以結構式(Structural) Verilog 實現「2-bit 連波進位加法器」。(module : prob02)</span></li></ul><pre id="38f6a163-6427-4913-841a-a90e540323a7" class="code code-wrap"><code>module prob02(
+    input [1:0] a,
+    input [1:0] b,
+    input cin,
+    output cout,
+    output [1:0] sum
+    );
+    
+    // 使用 fadd + 結構式 Verilog 實現「2-bit 連波進位加法器」電路設計
+    
+endmodule</code></pre><ul id="d275fca1-4df5-48bf-a19a-ed95bbe98d2a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 </span><p id="4a06d8cc-ccf0-4cbd-891a-a1da889e7c66" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob02_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob02_tb.v</a></p></li></ul><ul id="3cff6473-bb93-46e4-b021-fbc2229a2eba" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>實體考試</code> 把你的設計下載到 Zedboard，I/O 腳位設置考試當天公布。</span></li></ul><ul id="92ff985e-c65b-45fd-ad17-1242e4d1a171" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">如果無法<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</span></li></ul><h3 id="c720e003-d9f7-4917-9cf2-39ed0c9eddf0" class="block-color-yellow">結構式 Verilog 「2-bit 連波進位加法器」設計 </h3><figure id="057442ef-41d8-4bae-90e4-35a06ca1a25c" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%202.png"><img style="width:2641px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%202.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="31f1b066-f86f-4709-ad4c-7dddf2e7dfe7" class="block-color-teal_background">[實作問題 3]： 3-bit 比較器 (Comparator) 電路實作。</h3><div><iframe src="https://player.soundon.fm/embed/?podcast=6a4a3e88-5307-4ed5-8700-6d8fcce3465a&episode=9efade6a-1333-4bc7-a894-db7c04fce5df" id="soundon"></iframe></div></figure><ul id="6029c2f7-d521-48ee-a707-d4e1d5bc190c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">以 Data Flow Verilog 設計 1-bit 比較器。 (module : cmp)</span></li></ul><ul id="4121691c-097c-4ab3-b449-4b839c025250" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">參考附圖，以結構式 Verilog 實現「3-bit 比較器 」。(module : prob03)</span></li></ul><pre id="649432ef-9e8d-4a82-8fd6-1f35bbc5ee73" class="code code-wrap"><code>module prob03(
+    input [2:0] a,
+    input [2:0] b,
+    output lt,
+    output eq,
+    output gt
+);
+
+    // 使用 cmp + 結構式 Verilog 實現「3-bit 比較器 」電路設計
+
+endmodule</code></pre><ul id="d330e402-4d46-420e-9a8b-3be97805e561" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。</span><p id="81f0ddc0-7c83-4606-af0f-5872705bb283" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob03_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob03_tb.v</a></p></li></ul><ul id="aa145dc4-3764-45d0-8f75-3c3ac0d646a1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>實體考試</code> 把你的設計下載到 Zedboard，I/O 腳位設置考試當天公布。</span></li></ul><ul id="400ab2ca-f7f7-4b39-a6f3-24d7a9645730" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">如果無法<mark class="highlight-yellow">以結構式(Structural) Verilog 實作</mark>，請嘗試用你會的Verilog實作方法，只要能夠通過測試，依然可得部分分數<mark class="highlight-red">『10分』</mark>。</span></li></ul><h3 id="bd218a01-8ed7-4bd2-bd67-b116f47ae8ef" class="block-color-yellow">結構式 Verilog 「3-bit 比較器」設計 </h3><figure id="05cf6163-17df-42be-b04c-80d0f8778a10" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%203.png"><img style="width:2653px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%203.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="77203064-d886-454a-8af8-84f723e33adb" class="block-color-purple_background">[實作問題 4]：傳統編碼/解碼器(Encoder/Decoder)實現。</h3><ul id="9b547ac2-b4e6-454b-9c1f-ff5d778cf13d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">模組樣板：</span></li></ul><pre id="56492e64-17d4-4aad-89d7-29e15b7cd869" class="code code-wrap"><code>module prob04(		// 填入你的設計；沒有限制 Verilog 設計模式   
+
+    input [2:0] w,
+    output reg [4:0] y
+    );
+    
+		// 填入你的設計；沒有限制 Verilog 設計模式   
+
+endmodule</code></pre><ul id="f1a87598-2061-4117-a5f0-24ad99e7ea12" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">3 x 5 特殊解碼器</span><ul id="927808ed-8745-45dc-9483-64f734705d1b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>w</code>為『奇數』時，<code>y = 5&#x27;b1000</code></span></li></ul><ul id="33c30335-9f8b-4478-b65c-91cb24170b50" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>w</code> 為『偶數』時，(0, 2, 4, 6) 對應選擇 y[0] ~ y[3]</span><ul id="45d98c33-ea09-4205-a764-51f01e1b72e9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>w = 0</code> ⇒ <code>y = 5&#x27;b00001</code></span></li></ul><ul id="d8de4538-66fc-4dea-99ad-33d83d92c003" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>w = 2</code> ⇒ <code>y = 5&#x27;b00010</code></span></li></ul><ul id="84f6991a-37e9-4d57-9034-d027b66e340b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>w = 4</code> ⇒ <code>y = 5&#x27;b00100</code></span></li></ul><ul id="610518d4-cd46-405a-8bc4-4f7c5a500fe7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>w = 6</code> ⇒ <code>y = 5&#x27;b01000</code></span></li></ul></li></ul></li></ul><ul id="99fd9fb9-2000-4e59-8353-90f4d5057633" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 </span><p id="e86801b1-d5c9-4cf0-8c10-871edb20fe5b" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/tree/main/vivado/week17/testbench/prob04_tb.v">https://github.com/jy3736/digisys-2022s/tree/main/vivado/week17/testbench/prob04_tb.v</a></p></li></ul><h3 id="1235ddee-df65-450c-9cd5-935e1dc56033" class="block-color-yellow">RTL 分析結果</h3><figure id="2b3bb904-f7ca-4275-860a-ba3d3857f80c" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%204.png"><img style="width:3839px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%204.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="d09acd5b-e8ce-4581-905c-34642a1f2067" class="block-color-purple_background">[實作問題 5]：狀態機的輸出(Output)/下一個狀態(Next State)組合邏輯。</h3><ul id="4dcfc24f-7f63-4148-9058-47fc728b74ff" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">仿效狀態機章節的輸出(Output)組合邏輯設計。</span></li></ul><ul id="16df8ff0-152e-4af6-a068-deab0e9262d0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態機編碼： <code>s0 ~ s7 ⇒ 0, 1, 2, 3, 4, 5, 6, 7</code>。</span></li></ul><ul id="c1e09ea8-aae8-4a86-8d7c-b0593adf676f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">現在狀態(<code>s</code>)對應的輸出(<code>dout</code>)：</span><ul id="9731b919-1689-4b1d-8e0f-4c32adb5a178" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>0</code> ⇒ 輸出 <code>2</code></span></li></ul><ul id="6347210e-be54-4570-9ddf-5b3829218082" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>1</code> ⇒ 輸出 <code>0</code></span></li></ul><ul id="ef58c756-bcd8-4cdc-bce9-ab204fc389fe" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>2</code> ⇒ 輸出 <code>2</code></span></li></ul><ul id="2a57e619-29f6-4cf5-8b49-326cf2d384cc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>3</code> ⇒ 輸出 <code>2</code></span></li></ul><ul id="decf3dfb-8626-400b-bd80-6fb947f7d720" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>4</code> ⇒ 輸出 <code>0</code></span></li></ul><ul id="77d2ea9f-f0bf-4263-9935-bc652374ae02" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>5</code> ⇒ 輸出 <code>6</code></span></li></ul><ul id="736165cf-f4ec-456d-a658-7d0a8858ee86" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>6</code> ⇒ 輸出 <code>0</code></span></li></ul><ul id="63bc3775-cad6-4985-91af-ea0b1bc298cf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>7</code> ⇒ 輸出 <code>6</code></span></li></ul></li></ul><ul id="8464ba00-2028-42a9-bdf9-f32c245a9558" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">模組樣板：</span></li></ul><pre id="71362bad-666d-4bb7-90ec-c3b01dbf0026" class="code code-wrap"><code>// s0 ~ s7 =&gt; dout=2, 0, 2, 2, 0, 6, 0, 6
+
+module prob05(
+    input [2:0] s,
+    output reg [3:0] dout
+);
+
+    // 填入你的設計；沒有限制 Verilog 設計模式
+
+endmodule</code></pre><ul id="055cc2e2-1406-4050-b6ea-2b3d483c51be" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 </span><p id="2a4eac75-3ac1-4936-a9ae-5f2126c24906" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob05_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob05_tb.v</a></p></li></ul><h3 id="b27767b0-a889-4c56-84e8-853e011221ac" class="block-color-yellow">模擬結果</h3><figure id="762e258b-f9a9-4a41-b699-872617706c05" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%205.png"><img style="width:3372px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%205.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="a65e285c-e77e-4751-9287-8db9ae94f93c" class="block-color-purple_background">[實作問題 6]：D型正反器設計(4-位元、非同步0重置、正邊緣時脈取樣)。</h3><ul id="be52969c-1255-4f46-9952-dc79dc1f09ce" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">4-位元<code>正邊緣 clk</code> 觸發正反器。</span></li></ul><ul id="8d2bacb8-6938-46ea-955b-f1322f25be3b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">當 <code>rst==0</code> 時，<code>非同步</code>重置輸出為 <code>0</code>。</span></li></ul><ul id="9eb2c028-7480-40b0-bc61-c179b20487aa" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">模組樣板：</span></li></ul><pre id="53640d00-0d84-4399-a35e-38eb8db56350" class="code code-wrap"><code>// posedge clk + asynchronus clear @ rst==0
+//
+//  clk		 rst  	output
+//   x		 1-&gt;0		dout &lt;= 0
+//   x		 0-&gt;1		hold
+//  0-&gt;1	 1		  dout &lt;= din
+//  0-&gt;1	 0		  dout &lt;= 0
+//  1-&gt;0	 x		  hold
+
+module prob06(
+    input clk,
+    input rst,
+    input [3:0] din,
+    output reg [3:0] dout);
+
+    // 填入你的設計；沒有限制 Verilog 設計模式
+
+endmodule</code></pre><ul id="ddbc8318-18d7-4e2e-96aa-d5a6d40c941d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 </span><p id="41244b82-728f-4371-8e2f-f0ebbe494cd9" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob06_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob06_tb.v</a></p></li></ul><h3 id="3ac8fecd-a4a4-41dc-b972-f752ce9bf357" class="block-color-yellow">模擬結果</h3><figure id="68ef6a08-0f9d-430a-971b-72bc64060dba" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%206.png"><img style="width:3839px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%206.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="974483f4-d2f8-4d49-a17a-bb42946398ee" class="block-color-purple_background">[實作問題 7]：上/下數計數器設計(4-位元、同步0重置、正邊緣時脈取樣)。</h3><ul id="2f7090da-8afd-42cc-af1d-5017b85b447e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">4-位元上/下數計數器。</span><ul id="da9d3dbf-b815-4744-b1c0-43006cf70554" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>dec==0</code> ⇒ 上數計數器。 0,1,2,3, …</span></li></ul><ul id="914d1eed-9479-479c-8376-f6716e93e381" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>dec==1</code> ⇒ 下數計數器。 15,14,13,12, …</span></li></ul></li></ul><ul id="b0776d3f-6703-4980-a145-1fcc5c453e8b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">當 <code>rst==0</code> 時，<code>同步</code>重置輸出(<code>dout</code>)。</span><ul id="562d8046-9dca-4ebc-ad38-624be43278af" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>dec==0</code> ⇒ 重置輸出為 <code>0</code>。</span></li></ul><ul id="27ae96eb-e4b3-4291-95e9-96ce12c86596" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>dec==1</code> ⇒ 重置輸出為 <code>15</code>。</span></li></ul></li></ul><ul id="33164280-a16c-4695-a7ef-d173de26f83f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">模組樣板：</span></li></ul><pre id="3abd5b00-2cad-41a7-b6fc-fb8c943b4588" class="code code-wrap"><code>module prob07(
+    input clk,
+    input rst,
+    input dec,
+    output reg [3:0] dout
+);
+
+    // 填入你的設計；沒有限制 Verilog 設計模式
+
+endmodule</code></pre><ul id="77708792-bcfb-4848-b83b-0d33fff92cf0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 </span><p id="9cfaff60-b7d7-4e4a-b9e4-e0959a8e9d25" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob07_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob07_tb.v</a></p></li></ul><h3 id="c795fa29-5f0c-4880-a9e1-783512c31e02" class="block-color-yellow">模擬結果</h3><figure id="dbc55b80-a3c2-4009-890b-e0bce2fd4755" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%207.png"><img style="width:3839px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%207.png"/></a></figure><a href="#yang-id-001" class="yang-class-003">回目錄</a>
+<h3 id="39fbdb36-7213-4e20-a79e-623a89970fc7" class="block-color-purple_background">[實作問題 8]：『天氣預報 Moore 狀態機 (FSM)』實現。</h3><figure id="e0092f7f-b931-4789-9983-4da68172f80a" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%208.png"><img style="width:1526px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%208.png"/></a></figure><figure id="42ea0150-590f-409f-8c31-e8f5dde5301c" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%209.png"><img style="width:1231px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%209.png"/></a></figure><p id="3efd7f2f-f8ee-4caa-a497-00234562fea7" class="">
+</p><ul id="d96e4d1a-ec9c-417b-baa9-a66f60cc0c7c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">依據今天的天氣(<code>cs</code>)及兩個感測器(<code>sensor</code>)預報明天的天氣。</span></li></ul><ul id="5f472b45-32e5-4e29-be1e-3b16714afb4a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><code>正邊緣 clk</code> 觸發轉態(state change)。</span></li></ul><ul id="1367e22f-b494-4d3d-923f-0308f17db866" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">當 <code>rst==0</code> 時，<code>同步</code>重置狀態為<code>sunny</code>。</span></li></ul><ul id="d146dbd6-ad09-417e-bf59-e2163ed1f0b7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">天氣狀態(<code>cs</code>)：<code>sunny</code>、<code>cloudy</code>、<code>raining</code>。</span><ul id="d6665e7c-69c3-4795-9550-297230bb479e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>sunny</code> ⇒ 編碼 <code>0</code></span></li></ul><ul id="bf749245-a2cd-4bce-834f-0ac1070e866f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>cloudy</code> ⇒ 編碼 <code>1</code></span></li></ul><ul id="d34529e4-dd29-4aca-9613-849ba7ec4e79" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>raining</code> ⇒ 編碼 <code>2</code></span></li></ul></li></ul><ul id="dde8507c-ee31-4cc3-9486-d3a1d05ce046" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態對應的輸出是3個警示燈：<code>sun</code>、<code>cloud</code>、<code>rain</code>。</span><ul id="f905fec6-c035-4c7f-80e0-767319a0049d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>sunny</code> ⇒ 警示燈 <code>sun</code> 亮，其他燈滅。</span></li></ul><ul id="3d61a44e-f969-47d0-a2f4-0305b755308f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>cloudy</code> ⇒ 警示燈 <code>cloud</code> 亮，其他燈滅。</span></li></ul><ul id="c5989820-bca3-42f3-827a-bb35c44d7163" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">狀態 <code>raining</code> ⇒ 警示燈 <code>rain</code> 亮，其他燈滅。</span></li></ul></li></ul><ul id="717a164f-c988-492b-b805-e22987342dbe" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">模組樣板：</span></li></ul><pre id="6ad510da-01ef-47a3-a2db-bb42cb07223e" class="code code-wrap"><code>module prob08(
+    input clk,
+    input rst,
+    input [1:0] sensor,
+    output reg sun,
+    output reg cloud,
+    output reg rain
+);
+
+    parameter [1:0] sunny=0, cloudy=1, raining=2;
+
+    reg [1:0] cs, ns;
+
+    // 正邊緣 clk + 同步重置 (rst==0)；處理 cs 轉態
+
+		// 狀態對應輸出組合邏輯設計；處理 sun、cloud、rain 輸出
+
+		// 下一個狀態組合邏輯設計；處理 ns 輸出
+
+endmodule</code></pre><ul id="16706024-4c8a-4876-adff-361cdcc8dc77" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">你的電路必須<mark class="highlight-yellow">通過功能模擬測試</mark> (Testbench)。 </span><p id="6eb8cb53-d072-40e9-9665-5984b832e493" class=""><a  target="_blank" href="https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob08_tb.v">https://github.com/jy3736/digisys-2022s/blob/main/vivado/week17/testbench/prob08_tb.v</a></p></li></ul><h3 id="00a3831d-f21d-404a-a59a-7bcbd60d4dc6" class="block-color-yellow">模擬結果</h3><figure id="cdba5b11-cec4-4b22-9857-dd6e9a61e990" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%2010.png"><img style="width:3839px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/Untitled%2010.png"/></a></figure><figure id="4653735e-4b94-483c-b9ff-b1b91b46568c" class="image"><a href="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/%E5%9C%96%E7%89%873.png"><img style="width:1322px" src="%E6%9C%9F%E6%9C%AB%E6%B8%AC%E9%A9%97%20(%E6%95%B8%E4%BD%8D%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AF%A6%E5%8B%99)%2003855c612eb14c99aa64cefb67ca7ff8/%E5%9C%96%E7%89%873.png"/></a></figure></div></article>
+<script>hljs.highlightAll();</script>
+</body></html>
